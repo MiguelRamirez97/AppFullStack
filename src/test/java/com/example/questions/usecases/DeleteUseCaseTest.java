@@ -4,6 +4,7 @@ import com.example.questions.model.AnswerDTO;
 import com.example.questions.model.QuestionDTO;
 import com.example.questions.repo.AnswerRepository;
 import com.example.questions.repo.QuestionRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,6 +31,7 @@ class DeleteUseCaseTest {
         var answerDTO = new AnswerDTO("01","u01","test");
         Mockito.when(questionRepository.deleteById(questionDTO.getId())).thenReturn(Mono.empty());
         Mockito.when(answerRepository.deleteByQuestionId(answerDTO.getQuestionId())).thenReturn(Mono.empty());
-        var dataEmpty = deleteUseCase.apply(questionDTO.getId());
+        var dataEmpty = deleteUseCase.apply(questionDTO.getId()).block();
+        Assertions.assertEquals(dataEmpty,null);
     }
 }
