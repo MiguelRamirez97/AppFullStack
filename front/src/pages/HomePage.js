@@ -8,7 +8,9 @@ const HomePage = ({children}) => (
       {children}
     </div>
     <p>welcome to the question and answer app.</p>
-    <p>By: Miguel Ramirez</p>
+    <p>By</p>
+    <p>Miguel Ramirez</p>
+    <p> Adriana Franklin</p>
     <Link to="/questions" className="button">
       View Questions
     </Link>

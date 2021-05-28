@@ -51,6 +51,7 @@ const App = () => {
             <Route exact path="/list" component={OwnerQuestionsPage} />
             <Route exact path="/answer/:id" component={AnswerFormPage} />
             <Route exact path="/new" component={QuestionFormPage} />
+            <Route exact path="/list" component={AnswerFormPage} />
             <Redirect to="/" />
           </Switch>
         </> :

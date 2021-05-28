@@ -1,8 +1,23 @@
 .modal {
-    background-color: aqua;
+    background-color: rgba(0,0,0 , .85);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
     display: none;
+    justify-content: center;
+    align-content: center;
 }
 
 .modal-open {
-    display: flex;
+    display: grid;
+}
+
+.modal__dialog {
+    background-color: white;
+    width: 300px;
+    height: 400px;
+    padding: 10px;
 }
