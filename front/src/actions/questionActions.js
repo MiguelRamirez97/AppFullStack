@@ -118,3 +118,19 @@ export function postAnswer(answer) {
     }
 }
 
+export function deleteAnswer(id) {
+}
+
+export function fetchOwnerAnswers(userId) {
+    return async dispatch => {
+        dispatch(loading())
+        try {
+            const response = await fetch(`${URL_BASE}/getAllAnswers/${userId}`)
+            const data = await response.json()
+            dispatch(success({ answers: data, redirect: null }))
+        } catch (error) {
+            dispatch(failure())
+        }
+    }
+}
+

@@ -17,6 +17,7 @@ import QuestionsPage from './pages/QuestionsPage'
 import QuestionFormPage from './pages/QuestionFormPage'
 import AnswerFormPage from './pages/AnswerFormPage'
 import OwnerQuestionsPage from './pages/OwnerQuestionsPage'
+import OwnerAnswersPage from './pages/OwnerAnswersPage'
 import { useAuthState } from "react-firebase-hooks/auth";
 
 firebase.initializeApp({
@@ -51,6 +52,7 @@ const App = () => {
             <Route exact path="/list" component={OwnerQuestionsPage} />
             <Route exact path="/answer/:id" component={AnswerFormPage} />
             <Route exact path="/new" component={QuestionFormPage} />
+            <Route exact path="/answers" component={OwnerAnswersPage} />
             <Redirect to="/" />
           </Switch>
         </> :
