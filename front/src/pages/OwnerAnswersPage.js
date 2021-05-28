@@ -41,7 +41,7 @@ const OwnerAnswersPage = ({ dispatch, loading, answers, hasErrors, redirect }) =
 }
 
 const mapStateToProps = state => ({
-    //loading: state.answer.loading,
+    loading: state.answer.loading,
     answers: state.answer.answers,
     hasErrors: state.answer.hasErrors,
     redirect: state.answer.redirect,
