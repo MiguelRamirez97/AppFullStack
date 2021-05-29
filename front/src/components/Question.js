@@ -1,21 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import useModal from './hooks/useModal';
+import useModal from './hooks/useModal'
 import Modal from './Modal'
-// import './Modal.css'
-// import {Modal, ModalBody,ModalFooter,FormGroup} from 'reactstrap';
+
+import './Modal.css'
 
 
-export const Question = ({ question, excerpt, onDelete }) => {  
-  
-  const [isOpenModal,openModal, closeModal ] = useModal();
+export const Question = ({ question, excerpt, onDelete, isOpen }) => {
 
-//   const handleModalDialogClick = (e) => {
-//     e.stopPropagation();
-// }
+  const [isOpenModal, openModal, closeModal] = useModal();
 
   return (
-    <article className={excerpt ? 'question-excerpt' : 'question'}>
+    <div className={excerpt ? 'question-excerpt' : 'question'}>
       <h2>{question.question}</h2>
       <p>{question.category} - <small>{question.type}</small></p>
 
@@ -24,43 +20,28 @@ export const Question = ({ question, excerpt, onDelete }) => {
           View Question
         </Link>
       )}
-      
-      {onDelete && (
-        <button className="button right" onClick={openModal}> DELETE</button>
-        )}
-
-
-    
-
-      <Modal 
-      isOpen={isOpenModal}
-      closeModal={closeModal}         
-      >
-      
-    </Modal>
-
-    {isOpenModal && (<Modal />)}
-
-    {/* {isOpenModal && (
-<Modal className={`modal ${openModal && 'modal-open'}`} onClick={closeModal}>
-        <ModalBody className="modal__dialog" onClick={handleModalDialogClick}>
-          <FormGroup>
-            <p>Estas seguro de eliminar?</p>
-          </FormGroup>
-          <button color="primary"onClick={() => onDelete(question.id)}>si</button>
-          <button color="secondary"onClick={closeModal}>no</button>
-        </ModalBody>
-        <ModalFooter>
-        </ModalFooter>
-      </Modal>
-)}
 
       {onDelete && (
         <button className="button right" onClick={openModal}> DELETE</button>
-      )} */}
+      )}
+
+      <div>
+        <Modal
+          isOpen={isOpenModal}
+          closeModal={closeModal}
+        >
+
+          <h3>Estas seguro de eliminar?</h3>
+          <button onClick={() => onDelete(question.id)}>Si</button>
+          {console.log(question)}
+          <button onClick={closeModal}>No</button>
+
+        </Modal>
+
+      </div>
+    </div>
 
 
-
-    </article>
   )
+
 }
