@@ -17,7 +17,8 @@ export const Answer = ({ answer, excerpt, question, onDelete }) => {
         <button className="button right" onClick={openModal}>DELETE</button>
         )}
 
-        <p>{answer.userId}</p>
+        <p>{answer.answer}</p>
+
         </div>
 
 

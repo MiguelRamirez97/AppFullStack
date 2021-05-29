@@ -23,6 +23,8 @@ public class DeleteAnswerUseCase implements Function<String, Mono<Void>> {
     @Override
     public Mono<Void> apply(String id) {
         Objects.requireNonNull(id, "Id is required");
-        return answerRepository.deleteById(id);
+        return answerRepository.deleteById(id)
+                .switchIfEmpty(Mono.defer(() -> questionRepository.deleteById(id)))
+                ;
     }
 }
