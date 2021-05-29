@@ -21,13 +21,13 @@ import OwnerAnswersPage from './pages/OwnerAnswersPage'
 import { useAuthState } from "react-firebase-hooks/auth";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDO3sfcfI0wbE-lelnIB46iA_mMts88X1I",
-    authDomain: "frontappfull.firebaseapp.com",
-    projectId: "frontappfull",
-    storageBucket: "frontappfull.appspot.com",
-    messagingSenderId: "442451018",
-    appId: "1:442451018:web:cd0b8015697db6e3d3d2b3",
-    measurementId: "G-D1RYPCZHT4"
+  apiKey: "AIzaSyB4QDhTz5CsUIO41leeqg6r5QNZjdRY_2A",
+    authDomain: "appfullstackrobot.firebaseapp.com",
+    projectId: "appfullstackrobot",
+    storageBucket: "appfullstackrobot.appspot.com",
+    messagingSenderId: "75962076614",
+    appId: "1:75962076614:web:5aa4f4a93d37727dbab6c7",
+    measurementId: "G-C5YT1T951E"
 });
 
 const auth = firebase.auth();
