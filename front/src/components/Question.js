@@ -30,14 +30,11 @@ export const Question = ({ question, excerpt, onDelete, isOpen }) => {
           isOpen={isOpenModal}
           closeModal={closeModal}
         >
-
-          <h3>Estas seguro de eliminar?</h3>
-          <button onClick={() => onDelete(question.id)}>Si</button>
-          {console.log(question)}
-          <button onClick={closeModal}>No</button>
+            <h3 className="pregunta">Estas seguro de eliminar?</h3>
+            <button className="btn_modal color1" onClick={() => onDelete(question.id)}>Si</button>
+            <button className="btn_modal color2" onClick={closeModal}>No</button>
 
         </Modal>
-
       </div>
     </div>
 
