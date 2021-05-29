@@ -6,6 +6,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class AnswerDTO {
+    private String id;
     @NotBlank
     private String userId;
     @NotBlank
@@ -25,6 +26,12 @@ public class AnswerDTO {
         this.questionId = questionId;
         this.answer = answer;
     }
+    public AnswerDTO(String id,@NotBlank String questionId, @NotBlank String userId, @NotBlank String answer) {
+        this.id = id;
+        this.userId = userId;
+        this.questionId = questionId;
+        this.answer = answer;
+    }
 
     public Integer getPosition() {
         return Optional.ofNullable(position).orElse(1);
@@ -34,6 +41,13 @@ public class AnswerDTO {
         this.position = position;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUserId() {
         return userId;
