@@ -36,7 +36,7 @@ class GetUseCaseTest {
         question.setType("test");
         question.setCategory("test");
         question.setQuestion("test?");
-        var answerDTO = new AnswerDTO("01", "u01", "test");
+        var answerDTO = new AnswerDTO("01","01", "u01", "test");
         var answer = new Answer();
         answer.setId("01");
         answer.setQuestionId("01");

@@ -21,11 +21,11 @@ public class AnswerDTO {
 
     }
 
-    public AnswerDTO(@NotBlank String questionId, @NotBlank String userId, @NotBlank String answer) {
-        this.userId = userId;
-        this.questionId = questionId;
-        this.answer = answer;
-    }
+//    public AnswerDTO(@NotBlank String questionId, @NotBlank String userId, @NotBlank String answer) {
+//        this.userId = userId;
+//        this.questionId = questionId;
+//        this.answer = answer;
+//    }
     public AnswerDTO(String id,@NotBlank String questionId, @NotBlank String userId, @NotBlank String answer) {
         this.id = id;
         this.userId = userId;
