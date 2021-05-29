@@ -4,15 +4,77 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: -webkit-linear-gradient(to right, #383a3c, #6c6f71);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #383a3c, #6c6f71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
   }
   
   p {
     font-size: 1.1rem;
+    color: aliceblue;
+  }
+  .flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px;
+    margin-left: 100px;
+  }
+
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front {
+  position: absolute;
+  width: 100%;
+  /* height: 100%; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  text-align: end;
+}
+
+  .developers {
+    width: 500px;
+    text-align: center;
+    border-radius: 30px;
+    /* background-color: #186ea3; */
+    background-image: linear-gradient(65deg, #021b79 12%, #659cbb 100%);
+
+    transform: rotateX(180deg);
+    position: absolute;
+  
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   
+  .welcome {
+    margin: 100px;
+  }
+
+  .container{
+    max-width: 1000px;
+    padding: 0 15px;
+    flex: 1;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+  }
+
   nav {
     display: flex;
     padding: 2rem 0;
@@ -51,6 +113,7 @@ body {
   
   section h1 {
     font-size: 3rem;
+    color: #ccc;
   }
   
   input, select, textarea {
@@ -87,13 +150,16 @@ body {
   .question-excerpt h2 {
     margin-top: 0;
     font-size: 1.5rem;
+    
+    color: floralwhite;
   }
   
   .answer {
-    background: #f0f0f0;
+    background: transparent;
     border-radius: 4px;
     padding: 1rem 1.5rem;
     margin: 1rem 0;
+    border-bottom: #6c6f71 1px solid;
   }
   
 
@@ -107,6 +173,7 @@ body {
   }
 
   .right {
-    float: right;
+    float: right;    
+    margin-right: 150px;
   }
   
