@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const PublicNavbar = () => (
-  <nav>
+  <nav >
     <section>
       <Link to="/">Home</Link>
       <Link to="/questions">Questions</Link>
@@ -11,7 +11,7 @@ export const PublicNavbar = () => (
 )
 
 export const PrivateNavbar = () => (
-  <nav>
+  <nav >
     <section>
       <Link to="/">Home</Link>
       <Link to="/questions">Questions</Link>
