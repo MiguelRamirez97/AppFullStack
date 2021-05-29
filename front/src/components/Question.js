@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import {Modal,ModalBody,ModalFooter,FormGroup} from 'reactstrap';
+import useModal from './hook/useModal'
+import Modal from './Modal'
 
-export const Question = ({ question, excerpt, onDelete }) => {
+export const Question = ({ question, excerpt, onDelete, isOpen }) => {
 
-  const [state,setState]=useState(false);
-
-  const openModal = () => {
-    setState(!state)
-  }
+  const [isOpenModal, openModal, closeModal] = useModal();
 
   return (
-    <article className={excerpt ? 'question-excerpt' : 'question'}>
+    <div className={excerpt ? 'question-excerpt' : 'question'}>
       <h2>{question.question}</h2>
       <p>{question.category}  - <small>{question.type}</small></p>
       {onDelete && (
@@ -22,17 +19,19 @@ export const Question = ({ question, excerpt, onDelete }) => {
           View Question
         </Link>
       )}
-      <Modal isOpen={state}>
-        <ModalBody>
-          <FormGroup>
-            <p>Estas seguro de eliminar?</p>
-          </FormGroup>
-        </ModalBody>
-        <ModalFooter>
-          <button color="primary"onClick={() => onDelete(question.id)}>si</button>
-          <button color="secondary"onClick={openModal}>no</button>
-        </ModalFooter>
-      </Modal>
-    </article>
+      <div>
+        <Modal
+          isOpen={isOpenModal}
+          closeModal={closeModal}
+        >
+
+          <h3 className="pregunta">Estas seguro de eliminar?</h3>
+          <button className="btn_modal color1" onClick={() => onDelete(question.id)}>Si</button>
+          <button className="btn_modal color2" onClick={closeModal}>No</button>
+
+        </Modal>
+
+      </div>
+    </div>
   )
 }
