@@ -7,7 +7,6 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class AnswerDTO {
-    private String id;
     @NotBlank
     private String id;
     @NotBlank
